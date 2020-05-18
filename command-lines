@@ -1,4 +1,4 @@
-# Hmmbuild ir Hmmsearch įrankių Python rašmuo (angl. script):
+# (a) Hmmbuild ir Hmmsearch įrankių Python rašmuo (angl. script):
 
 import os, subprocess
 from optparse import OptionParser
@@ -25,24 +25,24 @@ for x in alnli:
 			dbn=y.split('/')[-1][:-1]
 			os.system('hmmsearch --cpu 4 -E 1e-03 -A '+alnn+dbn+'.haln --tblout '+alnn+dbn+'.tout '+x.split('.')[0]+'.hmm '+y[:-1]+' > '+alnn+dbn+'.hout')
 
-# CLANS programos komandinė eilutė:
+# (b) CLANS programos komandinė eilutė:
 
 java -Xmx14G -jar clans.jar -infile file -blastpath 'blastpgp -j 1 -h 1e-03' -formatdbpath 'formatdb ' -eval 1e-03 -pval 1e-03 -cpu 8
 
-# MAFFT programos komandinė eilutė:
+# (c) MAFFT programos komandinė eilutė:
 
 mafft --auto input > output
 
-# Reformat.pl, Addss.pl ir Hhmake įrankių komandinės eilutės:
+# (d) Reformat.pl, Addss.pl ir Hhmake įrankių komandinės eilutės:
 
 reformat.pl fas a3m file.fas file.a3m
 addss.pl file.a3m
 hhmake -i file.a3m
 
-# Hhblits įrankio komandinė eilutė:
+# (e) Hhblits įrankio komandinė eilutė:
 
 hhblits -cpu 80 -n 2 -e 1e-03 -i file.aa -d uniclust30_2018_08 -oa3m file.a3m
 
-# Hhsearch įrankio komandinė eilutė:
+# (f) Hhsearch įrankio komandinė eilutė:
 
 hhsearch -Z 5000 -B 5000 -cpu 48 -i file.hhm -d /tmp/db/pfam -d /tmp/db/pdb70 -d /tmp/db/NCBI_CD -d /tmp/db/scop70 -d /tmp/db/CRISPR-Cas2018HMM -o file.hhr
