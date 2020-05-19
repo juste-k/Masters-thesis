@@ -8,15 +8,12 @@ def read_file(filename):
         lines=fr.readlines()
         fr.close()
         return(lines)
-
 parser = OptionParser() 
 parser.add_option("-a", action="store", type="string", dest="aln")
 parser.add_option("-d", action="store", type="string", dest="dbli")
 (options, args) = parser.parse_args()
-
 alnli=read_file(options.aln)
 dbli=read_file(options.dbli)
-
 for x in alnli:
 	alnn=x.split('.')[0]
 	os.system('hmmbuild '+alnn+'.hmm '+x[:-1])
