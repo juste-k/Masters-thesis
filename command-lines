@@ -2,7 +2,6 @@
 
 import os, subprocess
 from optparse import OptionParser
-
 def read_file(filename):
         fr=open(filename, 'r')
         lines=fr.readlines()
