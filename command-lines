@@ -1,5 +1,5 @@
-'#' **(a)** Hmmbuild ir Hmmsearch įrankių Python rašmuo (angl. script):
-```
+# (a) Hmmbuild ir Hmmsearch įrankių Python rašmuo (angl. script):
+
 import os, subprocess
 from optparse import OptionParser
 def read_file(filename):
@@ -20,11 +20,11 @@ for x in alnli:
 		if not y.startswith('#'):
 			dbn=y.split('/')[-1][:-1]
 			os.system('hmmsearch --cpu 4 -E 1e-03 -A '+alnn+dbn+'.haln --tblout '+alnn+dbn+'.tout '+x.split('.')[0]+'.hmm '+y[:-1]+' > '+alnn+dbn+'.hout')
-```
+
 # (b) CLANS programos komandinė eilutė:
-```
+
 java -Xmx14G -jar clans.jar -infile file -blastpath 'blastpgp -j 1 -h 1e-03' -formatdbpath 'formatdb ' -eval 1e-03 -pval 1e-03 -cpu 8
-```
+
 # (c) MAFFT programos komandinė eilutė:
 
 mafft --auto input > output
