@@ -1,5 +1,5 @@
-# **(a)** Hmmbuild ir Hmmsearch įrankių Python rašmuo (angl. script):
-**a**
+# (a) Hmmbuild ir Hmmsearch įrankių Python rašmuo (angl. script):
+
 import os, subprocess
 from optparse import OptionParser
 def read_file(filename):
