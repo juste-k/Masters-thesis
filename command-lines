@@ -29,16 +29,16 @@ java -Xmx14G -jar clans.jar -infile file -blastpath 'blastpgp -j 1 -h 1e-03' -fo
 
 mafft --auto input > output
 
-# (d) Reformat.pl, Addss.pl ir Hhmake įrankių komandinės eilutės:
+# (d) Reformat.pl, Addss.pl ir HHmake įrankių komandinės eilutės:
 
 reformat.pl fas a3m file.fas file.a3m
 addss.pl file.a3m
 hhmake -i file.a3m
 
-# (e) Hhblits įrankio komandinė eilutė:
+# (e) HHblits įrankio komandinė eilutė:
 
-hhblits -cpu 80 -n 2 -e 1e-03 -i file.aa -d uniclust30_2018_08 -oa3m file.a3m
+hhblits -cpu 80 -n 2 -e 1e-03 -i file.fas -d uniclust30_2018_08 -oa3m file.a3m
 
-# (f) Hhsearch įrankio komandinė eilutė:
+# (f) HHsearch įrankio komandinė eilutė:
 
 hhsearch -Z 5000 -B 5000 -cpu 48 -i file.hhm -d /tmp/db/pfam -d /tmp/db/pdb70 -d /tmp/db/NCBI_CD -d /tmp/db/scop70 -d /tmp/db/CRISPR-Cas2018HMM -o file.hhr
